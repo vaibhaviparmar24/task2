@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>  
+        h1 {  
+            text-align: center;  
+            padding: 23px;  
+            background-color: rgb(190, 115, 23);  
+            color: rgb(145, 20, 20);  
+            }  
+          
+        #clear{  
+        width: 270px;  
+        border: 3px solid rgb(128, 98, 0);  
+            border-radius: 3px;  
+            padding: 20px;  
+            background-color: rgb(175, 62, 27);  
+        }  
+          
+        .formstyle  
+        {  
+        width: 300px;  
+        height: 530px;  
+        margin: auto;  
+        border: 3px solid rgb(81, 49, 5);  
+        border-radius: 5px;  
+        padding: 20px;  
+        }  
+          
+          
+          
+        input  
+        {  
+        width: 20px;  
+        background-color: rgb(128, 98, 0);  
+        color: rgb(56, 6, 6);  
+        border: 3px solid rgb(174, 37, 37);  
+            border-radius: 5px;  
+            padding: 26px;  
+            margin: 5px;  
+            font-size: 15px;  
+        }  
+          
+          
+        #calc{  
+        width: 250px;  
+        border: 5px solid rgb(170, 21, 21);  
+            border-radius: 3px;  
+            padding: 20px;  
+            margin: auto;  
+        }  
+          
+        </style>  
+          
+        </head>  
+        <body>  
+        <div class= "formstyle">  
+        <form name = "form1">  
+              
+            
+          <input id = "calc" type ="text" name = "answer"> <br> <br>  
+          
+          <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">  
+          <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">  
+          <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">  
+           <input type = "button" value = "-" onclick = "form1.answer.value += '-' ">  
+          <br> <br>  
+            
+          <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">  
+          <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">  
+          <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">  
+          <input type = "button" value = "*" onclick = "form1.answer.value += '*' ">  
+          <br> <br>  
+            
+          <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">  
+          <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">  
+          <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">  
+          <input type = "button" value = "\" onclick = "form1.answer.value += '\' ">  
+          <br> <br>  
+            
+            
+          <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">  
+          <input type = "button" value = "." onclick = "form1.answer.value += '.' ">  
+            <input type = "button" value = "+" onclick = "form1.answer.value += '+' ">  
+            
+          <input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) ">  
+          <br>   
+        
+          <input type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear" >  
+          <br>   
+            
+        </form>  
+        </div>  
+        
+        <script>
+          let display = document.getElementById('display');
+          let currentInput = '';
+        
+          function appendNumber(number) {
+              currentInput += number;
+              display.value = currentInput;
+          }
+        
+          function setOperator(operator) {
+              currentInput += operator;
+              display.value = currentInput;
+          }
+        
+          function clearDisplay() {
+              currentInput = '';
+              display.value = '';
+          }
+        
+          function calculateResult() {
+              try {
+                  currentInput = eval(currentInput);
+                  display.value = currentInput;
+              } catch (error) {
+                  display.value = 'Error';
+              }
+          }
+        </script> 
+    
+</body>
+</html>
